@@ -1,0 +1,87 @@
+MAIN SCREEN APP STATES
+Search mode
+    Search box
+    Search icon (search for what is in box)
+    Navigation: profile, playlists
+    [Results area is blank / hidden]
+Results mode
+    Search criteria (you searched for...)
+    Navigation: profile, search, playlists
+    [Results area shows songs]
+    
+    Songs show title, artist, upvotes, downvotes
+    If user is logged in
+        Upvote/downvote are active
+        Add to playlist button is visible and active
+    Else
+        Upvote/downvote are view only
+        Add to playlist button is not visible
+        
+Playlist mode
+    "Playlists"
+    Icon to add a playlist
+    Navigation: profile, search
+    [Results area shows playlists]
+    User clicks on a playlist (results area, playlist mode)
+        main screen enters results mode
+        "search criteria" shows playlist name
+        results area shows playlist contents
+    
+ALL SCREENS NAVIGATION ACTIONS
+User enters a keyword (for song title) and clicks "search"
+    if at least one match is found, matches returned
+        (quantity displayed might be limited)
+        change to results mode
+    if no match is found, message displayed: no matches found
+    
+User clicks navigation icon for profile
+    if not logged in 
+        user is prompted to log in or create an account
+        route to login mode
+    else - user is logged in
+        rouit to profile mode
+        
+User clicks navigation icon for search
+    (login status is not a factor)
+    main screen enters search mode
+    search criteria are empty and in focus
+    search results are empty / hidden
+    
+User clicks navigation icon for playlists
+    if not logged in
+        user is prompted to log in or create an account
+    else - user is logged in
+        main screen enters playlist mode
+        if there are no playlists
+            results area shows extra button to add playlist
+            (header of playlist mode already includes button to add playlist)
+        else - there is at least one playlist
+            all playlists show
+
+ON LOAD
+Enter search mode immediately
+If user is not logged in 
+   Show login/signup button
+Else if user is logged in
+   Show profile & playlist navigation
+
+PROFILE 
+User sees name, preferences, account info
+User can edit any fields directly
+User needs to click to save
+If any fields are edited and they don't click save, it asks if they want to save.
+User manually navigates to another screen (no auto state change).
+
+LOGIN 
+If we click "login" on any other screens/states, we route here.
+User sees: username, password, "create account", "login"
+User clicks login
+    ... several steps here, but both username & password need to be entered, and valid. On success, go to playlists (if any, go to profile if account just created).
+User clicks create account
+    Route to signup
+
+SIGNUP (NEW ACCOUNT)
+We get here from "login" 
+User sees: username, password, first & last name, email, and "create account"
+On success, go to login.
+

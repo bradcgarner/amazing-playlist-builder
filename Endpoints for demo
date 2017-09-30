@@ -1,0 +1,75 @@
+get /api/music/artist
+loads 20 artists (with albums and songs)
+
+
+
+get /api/music/songs?song=teal
+loads artists with songs that include teal
+
+
+
+get /api/music/albums?album=ivory
+loads artists with albums that include ivory
+
+
+
+
+post /api/music/artist
+{
+  "artistName" : "Elvis",
+  "albums": [
+      { "title" : "Blue Hawaii" }
+  ]
+}
+
+
+
+
+put /api/music/artist/:idjustposted
+{
+  "id" : idjustposted ,
+  "artistName" : "Elvis Costello"
+}
+
+
+
+
+NOT WORKING
+get /api/music/artist/:idjustposted
+
+
+
+
+delete /api/music/artist/:idjustposted
+
+
+
+
+
+post /api/music/playlist
+{
+   "playlistName" : "The Best Mix Tape"
+}
+
+
+
+
+
+
+put /api/music/playlist/59ccd497ee7460a5ef248a76
+{
+    "id": "59ccd497ee7460a5ef248a76",
+	"playlistName" : "road rage music"
+}
+
+
+
+
+
+get /api/music/playlist/59ccd497ee7460a5ef248a76
+
+
+
+
+
+get /api/music/playlist/user/:idfromoneabove

@@ -1,0 +1,55 @@
+/api/users/
+router: users/router.js
+
+    /api/users
+    POST: 
+    create a new user
+
+    /api/users
+    PUT:
+    edit user profile
+    JWT auth
+
+/api/auth/
+router: auth/router.js
+
+    /api/auth/login
+    POST: login
+    basic auth (u&p in header)
+
+    /api/auth/refresh
+    POST: update JWT token
+    JWT auth
+
+/api/music/
+router: music/router.js
+
+    /api/music/
+    GET: 
+    query params (optional)
+       song keywords
+    if no query params: default list of songs for teaser content
+    no auth
+
+    /api/music/playlist/
+    POST: create new playlist
+    JWT auth
+    
+    /api/music/playlist/:id
+    get: playlist by id
+    JTW auth
+
+    /api/music/playlist/:id
+    PUT: update playlist by id (replace all songs)
+    query params required:
+       song id array add
+       song id array delete
+    JTW auth
+
+    /api/music/playlist/:id
+    DELETE: playlist by id
+    JTW auth
+
+    /api/music/vote/:id
+    PUT: upvote song by id, default up (1), query param as dn (-1)
+    JWT auth

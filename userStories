@@ -1,0 +1,122 @@
+High-Level App Idea
+
+This app allows users to manage their music listening experience: search for music, create playlists, and expand and/or narrow music selections based on the user's musical tastes and desire to expand or limit their horizons.
+
+* Minimum Viable Product
+Create a profile, search for music, save playlists
+
+As a user, I should be able to:
+ACCESS 
+ * sign up
+ * log in
+
+PREFERENCES
+  * create my profile
+	  (later) including my favorite
+    artists
+	  genres
+	  albums
+	  tracks
+  * edit my profile
+  * up-vote or down-vote 
+    * tracks
+		artists
+	  genres
+	  albums
+
+SEARCH
+  * search for songs
+    * by song keyword
+	  by artist keyword
+	  by album keyword
+	  by genre
+	  by vote quantity
+  * view search results
+  edit search results
+    remove a song
+	  remove an album
+	  add remaining songs from an album
+	  remove an artist
+	  add remaining songs by an artist
+	  remove a genre
+	  remove duplicate songs
+	    show only top-rated
+	    show only live
+	    show only studio
+	    show only original / first release
+	  add all versions of a song (e.g. remixes, covers, other recordings)
+  * save search results
+	  * just one song
+		entire search results
+    * to a new playlist
+	  * to the end of an existing playlist
+  preview music by listening to a song directly from search results
+  branch off a new search from the current search by selecting
+    an artist
+	  a genre
+	  an album
+
+SAVE
+  * see my playlists
+    * add a new empty playlist
+    * delete a playlist
+  * open and edit a playlist
+	  * delete songs
+		delete albums
+		delete all songs of genre
+		delete all songs by artist
+		delete all songs by vote quantity above above or below a given value
+	  playlist order (permanent)
+	to listen (this is front-end only????)
+	  to a song
+	  to the entire playlist in permanent order
+	    from the top
+		  starting at a given song
+	  to the entire playlist in temporary order
+	  	from the top
+		  starting at a given song
+	  
+LISTEN
+  preview a song from search results (see above)
+  to a playlist
+  other options in the future???
+	  
+
+SHARE
+  create and edit a network of friends
+  make my profile public or private
+  make my playlists public or private
+  see my friends profiles
+  see my friends public playlists
+  treat my friends public playlists like search results
+    e.g. remove songs, add to my playlists, copy their entire playlist, etc.
+	this has no effect on my friends' playlists (I am editing a representation only)
+  search for friends who have similar musical tastes
+    there could be a variety of factors for this...
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+MINIMUM
+
+ACCESS 
+ * sign up - post to users / public
+ * log in - get / authentication / restricted
+
+PREFERENCES
+  * edit my profile - put to users / restricted
+  * up-vote or down-vote tracks - put to music / restricted
+
+SEARCH
+  * search for songs by song keyword - get to music / public
+  * view search results - get to music / public 
+  * save search results - see below
+	  * just one song - see below
+    * to a new playlist - post to playlist / restricted
+	  * to the end of an existing playlist - put to playlist / restricted
+
+SAVE
+  * see my playlists - get to playlist / restricted
+    * add a new empty playlist - post to playlist / restricted
+    * delete a playlist - delete from playlist / restricted
+  * open and edit a playlist - get (open) to playlist / restricted (edit = put, diff action)
+	  * delete songs - put to playlist / restricted - QUESTION best way to handle??????
